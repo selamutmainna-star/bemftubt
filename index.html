@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Linktree | BEM FT UBT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+        linear-gradient(120deg,rgba(0,0,0,.85),rgba(20,20,20,.85)),
+        url("ft.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    animation:fadeBg 1.2s ease;
+}
+
+@keyframes fadeBg{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+.container{
+    width:100%;
+    max-width:360px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(1px);
+    border-radius:20px;
+    padding:32px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 25px 60px rgba(0,0,0,.75);
+    animation:containerIn .9s ease forwards;
+}
+
+@keyframes containerIn{
+    from{
+        transform:scale(.85) translateY(90px);
+        opacity:10;
+    }
+    to{
+        transform:scale(1) translateY(0);
+        opacity:1;
+    }
+}
+
+/* ===== IKON JURUSAN ===== */
+.tech-major{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin-bottom:18px;
+}
+
+.tech-major i{
+    font-size:22px;
+    opacity:.8;
+    animation:floatIcon 3.5s ease-in-out infinite;
+}
+
+.tech-major i:nth-child(1){animation-delay:0s}
+.tech-major i:nth-child(2){animation-delay:.5s}
+.tech-major i:nth-child(3){animation-delay:1s}
+.tech-major i:nth-child(4){animation-delay:1.5s}
+
+@keyframes floatIcon{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+    100%{transform:translateY(0)}
+}
+
+/* ===== PROFILE ===== */
+.profile{
+    animation:fadeUp .8s ease .2s both;
+}
+
+.profile img{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    border:3px solid #bdbdbd;
+    object-fit:cover;
+}
+
+.profile h2{
+    margin-top:15px;
+    font-weight:600;
+}
+
+.profile p{
+    font-size:14px;
+    opacity:.85;
+    margin-bottom:26px;
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(20px)}
+    to{opacity:1; transform:translateY(0)}
+}
+
+/* ===== BUTTON MENU ===== */
+.menu-btn{
+    width:100%;
+    padding:16px;
+    margin-bottom:14px;
+    border-radius:16px;
+    background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.05));
+    border:none;
+    color:#fff;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
+    transition:.35s;
+    animation:fadeUp .7s ease forwards;
+}
+
+.menu-btn:nth-child(3){animation-delay:.4s}
+.menu-btn:nth-child(4){animation-delay:.55s}
+.menu-btn:nth-child(5){animation-delay:.7s}
+
+.menu-btn:hover{
+    background:#fff;
+    color:#111;
+    transform:translateY(-4px) scale(1.02);
+    box-shadow:0 10px 25px rgba(255,255,255,.25);
+}
+
+/* ===== MODAL ===== */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:90%;
+    max-width:360px;
+    background:#0f0f0f;
+    border-radius:20px;
+    padding:26px;
+    animation:modalIn .4s ease forwards;
+}
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
+}
+
+.modal-header h3{
+    font-size:16px;
+}
+
+.close{
+    cursor:pointer;
+    font-size:22px;
+    opacity:.7;
+}
+
+.close:hover{opacity:1}
+
+.links a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 18px;
+    margin-bottom:12px;
+    background:rgba(255,255,255,.12);
+    border-radius:14px;
+    color:#fff;
+    text-decoration:none;
+    transition:.35s;
+}
+
+.links a:hover{
+    background:#fff;
+    color:#111;
+    transform:translateX(6px);
+}
+
+footer{
+    margin-top:22px;
+    font-size:12px;
+    opacity:.7;
+    animation:fadeUp .8s ease .9s both;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="profile">
+        <img src="bemftubt.jpg">
+        <h2>BEM FT UBT</h2>
+        <p>
+            Badan Eksekutif Mahasiswa Fakultas Teknik<br>
+            Universitas Borneo Tarakan
+        </p>
+    </div>
+    <!-- IKON JURUSAN -->
+    <div class="tech-major">
+        <i class="fas fa-gear" title="Teknik Mesin"></i>
+        <i class="fas fa-building" title="Teknik Sipil"></i>
+        <i class="fas fa-computer" title="Teknik Komputer"></i>
+        <i class="fas fa-bolt" title="Teknik Elektro"></i>
+    </div>
+
+    <button class="menu-btn" onclick="openModal('narahubung')">
+        <i class="fas fa-phone"></i> Narahubung
+    </button>
+
+    <button class="menu-btn" onclick="openModal('sosmed')">
+        <i class="fas fa-share-nodes"></i> Sosial Media
+    </button>
+
+    <button class="menu-btn" onclick="openModal('dokumen')">
+        <i class="fas fa-folder"></i> Dokumentasi
+    </button>
+
+    <footer>⚙️ FT UBT • 2026</footer>
+</div>
+
+<!-- MODAL NARAHUBUNG -->
+<div class="modal" id="narahubung">
+<div class="modal-box">
+<div class="modal-header">
+<h3>Narahubung</h3>
+<span class="close" onclick="closeModal('narahubung')">&times;</span>
+</div>
+<div class="links">
+<a href="https://wa.me/6285282392004"><span><i class="fab fa-whatsapp"></i> WhatsApp</span><i class="fas fa-arrow-right"></i></a>
+<a href="mailto:bem.fteknik.ubt@gmail.com"><span><i class="fas fa-envelope"></i> Email</span><i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+
+<!-- MODAL SOSMED -->
+<div class="modal" id="sosmed">
+<div class="modal-box">
+<div class="modal-header">
+<h3>Sosial Media</h3>
+<span class="close" onclick="closeModal('sosmed')">&times;</span>
+</div>
+<div class="links">
+<a href="https://instagram.com/bem_ft_ubt"><span><i class="fab fa-instagram"></i> Instagram</span><i class="fas fa-arrow-right"></i></a>
+<a href="https://x.com/bem_ft_ubt"><span><i class="fab fa-x-twitter"></i> X</span><i class="fas fa-arrow-right"></i></a>
+<a href="https://m.youtube.com/@bemftubt6588"><span><i class="fab fa-youtube"></i> YouTube</span><i class="fas fa-arrow-right"></i></a>
+</div>
+</div>
+</div>
+
+<!-- MODAL DOKUMENTASI -->
+<div class="modal" id="dokumen">
+<div class="modal-box">
+<div class="modal-header">
+<h3>Dokumentasi</h3>
+<span class="close" onclick="closeModal('dokumen')">&times;</span>
+</div>
+<div class="links">
+<a href="https://drive.google.com/drive/mobile/folders/1YTqiA6EI6KVEU35J9rt6FkNNf5R4gQcI">
+<span><i class="fas fa-folder-open"></i> Google Drive</span>
+<i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+
+<script>
+function openModal(id){
+    document.getElementById(id).classList.add("active");
+}
+function closeModal(id){
+    document.getElementById(id).classList.remove("active");
+}
+</script>
+
+</body>
+</html>
